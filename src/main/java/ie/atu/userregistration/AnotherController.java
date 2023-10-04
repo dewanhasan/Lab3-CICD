@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import java.sql.SQLOutput;
 
 public class AnotherController {
-    @PostMapping("user")
-    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("users")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public Credentials registerUserCredential(@RequestBody Credentials credentials){
-        System.out.println("User ID: " + credentials.getUserName());
-        System.out.println("User ID: " + credentials.getPassword());
+        System.out.println("userName " +credentials.getUserName());
+        System.out.println("password " +credentials.getPassword());
         return credentials;
     }
 }
