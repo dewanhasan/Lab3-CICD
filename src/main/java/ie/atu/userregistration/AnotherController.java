@@ -4,15 +4,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.SQLOutput;
 
+
+@RestController
 public class AnotherController {
-    @PostMapping("user")
-    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping("users")
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public Credentials registerUserCredential(@RequestBody Credentials credentials){
-        System.out.println("User ID: " + credentials.getUserName());
-        System.out.println("User ID: " + credentials.getPassword());
+        System.out.println("userName " +credentials.getUserName());
+        System.out.println("password " +credentials.getPassword());
         return credentials;
     }
 }
